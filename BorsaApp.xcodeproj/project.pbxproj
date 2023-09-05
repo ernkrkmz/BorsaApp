@@ -14,6 +14,7 @@
 		7044DA592AA6127900D2511A /* BorsaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7044DA572AA6127900D2511A /* BorsaApp.xcdatamodeld */; };
 		7044DA5B2AA6127A00D2511A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7044DA5A2AA6127A00D2511A /* Assets.xcassets */; };
 		7044DA5E2AA6127A00D2511A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7044DA5C2AA6127A00D2511A /* LaunchScreen.storyboard */; };
+		7044DA672AA612D100D2511A /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 7044DA662AA612D100D2511A /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7044DA672AA612D100D2511A /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,9 @@
 			dependencies = (
 			);
 			name = BorsaApp;
+			packageProductDependencies = (
+				7044DA662AA612D100D2511A /* SwiftSoup */,
+			);
 			productName = BorsaApp;
 			productReference = 7044DA4B2AA6127900D2511A /* BorsaApp.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 7044DA422AA6127900D2511A;
+			packageReferences = (
+				7044DA652AA612D100D2511A /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			productRefGroup = 7044DA4C2AA6127900D2511A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -362,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7044DA652AA612D100D2511A /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7044DA662AA612D100D2511A /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7044DA652AA612D100D2511A /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7044DA572AA6127900D2511A /* BorsaApp.xcdatamodeld */ = {
