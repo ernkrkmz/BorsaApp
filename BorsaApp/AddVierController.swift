@@ -1,20 +1,14 @@
 //
-//  ViewController.swift
+//  AddVierController.swift
 //  BorsaApp
 //
-//  Created by Eren Korkmaz on 4.09.2023.
+//  Created by Eren Korkmaz on 7.09.2023.
 //
 
 import UIKit
 import SwiftSoup
+class AddVierController: UIViewController {
 
-
-class ViewController: UIViewController {
-
-    
-    var myHtmlString = "boş myHtmlStr"
-    var array_name = [String]()
-    
     func getHtmlPage(){
 
         let milliyet = URL(string: "https://uzmanpara.milliyet.com.tr/canli-borsa/bist-TUM-hisseleri/")!
@@ -28,9 +22,7 @@ class ViewController: UIViewController {
                 return
             }
             
-            DispatchQueue.main.async{
-                self.myHtmlString = htmlString
-            }
+            
             
             parser(html: htmlString)
         }
@@ -42,19 +34,12 @@ class ViewController: UIViewController {
         do{
             let document : Document = try SwiftSoup.parse(html)
             guard let body = document.body() else {return}
-//            var zebras = try body.getElementsByClass("zebra").text()
             do{
                 let isimler = try body.getElementsByClass("currency").text()
                 let sirketler = isimler.split(separator: " ")
                 print(sirketler)
-                
-
             }
             
-//            DispatchQueue.main.async {
-//
-//
-//            }
             
         }catch{
             
@@ -64,14 +49,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
         
         getHtmlPage()
-        
-        
     }
-
+    
 
     
-}
 
+}

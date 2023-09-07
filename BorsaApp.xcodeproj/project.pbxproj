@@ -15,6 +15,7 @@
 		7044DA5B2AA6127A00D2511A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7044DA5A2AA6127A00D2511A /* Assets.xcassets */; };
 		7044DA5E2AA6127A00D2511A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7044DA5C2AA6127A00D2511A /* LaunchScreen.storyboard */; };
 		7044DA672AA612D100D2511A /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 7044DA662AA612D100D2511A /* SwiftSoup */; };
+		70C1FF842AAA6C0100C7BEBB /* AddVierController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C1FF832AAA6C0100C7BEBB /* AddVierController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		7044DA5A2AA6127A00D2511A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7044DA5D2AA6127A00D2511A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7044DA5F2AA6127A00D2511A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70C1FF832AAA6C0100C7BEBB /* AddVierController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVierController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				7044DA5C2AA6127A00D2511A /* LaunchScreen.storyboard */,
 				7044DA5F2AA6127A00D2511A /* Info.plist */,
 				7044DA572AA6127900D2511A /* BorsaApp.xcdatamodeld */,
+				70C1FF832AAA6C0100C7BEBB /* AddVierController.swift */,
 			);
 			path = BorsaApp;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				7044DA592AA6127900D2511A /* BorsaApp.xcdatamodeld in Sources */,
 				7044DA4F2AA6127900D2511A /* AppDelegate.swift in Sources */,
 				7044DA512AA6127900D2511A /* SceneDelegate.swift in Sources */,
+				70C1FF842AAA6C0100C7BEBB /* AddVierController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
