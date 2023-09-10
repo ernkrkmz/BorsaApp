@@ -17,42 +17,77 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyh-nJ-63F">
-                                <rect key="frame" x="146" y="102" width="102" height="35"/>
+                                <rect key="frame" x="83" y="183" width="226" height="77"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Hisse Ekle"/>
                                 <connections>
+                                    <action selector="hisseEkleClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ywc-65-rsC"/>
                                     <segue destination="Mbf-WQ-mbL" kind="show" identifier="toAddVC" id="inG-JJ-J11"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5an-jt-Nsz">
+                                <rect key="frame" x="83" y="295" width="226" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="VhE-T7-bC9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Portföy"/>
+                                <connections>
+                                    <action selector="hisseEkleClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xqX-HN-qZl"/>
+                                    <action selector="portfoyClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jfl-eE-NZo"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wyh-nJ-63F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="146" id="4cL-RC-DLV"/>
-                            <constraint firstItem="wyh-nJ-63F" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43" id="PfZ-as-LpN"/>
-                            <constraint firstItem="wyh-nJ-63F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nOe-Lq-bkf"/>
+                            <constraint firstItem="wyh-nJ-63F" firstAttribute="trailing" secondItem="5an-jt-Nsz" secondAttribute="trailing" id="10X-tv-bmb"/>
+                            <constraint firstItem="wyh-nJ-63F" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="124" id="1Et-mI-aJJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5an-jt-Nsz" secondAttribute="bottom" constant="446" id="36v-UZ-XLM"/>
+                            <constraint firstItem="5an-jt-Nsz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5rB-KN-lnj"/>
+                            <constraint firstItem="5an-jt-Nsz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="FY5-kd-bvK"/>
+                            <constraint firstItem="5an-jt-Nsz" firstAttribute="top" secondItem="wyh-nJ-63F" secondAttribute="bottom" constant="35" id="Heh-tb-DJa"/>
+                            <constraint firstItem="wyh-nJ-63F" firstAttribute="leading" secondItem="5an-jt-Nsz" secondAttribute="leading" id="zzO-cZ-1A8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnHisseEkle" destination="wyh-nJ-63F" id="rYN-OI-Aqd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="57.251908396946561" y="-2.1126760563380285"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Vier Controller-->
         <scene sceneID="Wgh-pI-BNM">
             <objects>
-                <viewController id="Mbf-WQ-mbL" sceneMemberID="viewController">
+                <viewController id="Mbf-WQ-mbL" customClass="AddVierController" customModule="BorsaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W9b-oy-RlW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MOG-lz-ATq">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="IiL-ZQ-uEn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MOG-lz-ATq" firstAttribute="top" secondItem="IiL-ZQ-uEn" secondAttribute="top" id="6SQ-b2-Gtf"/>
+                            <constraint firstItem="MOG-lz-ATq" firstAttribute="leading" secondItem="IiL-ZQ-uEn" secondAttribute="leading" id="PHj-6g-nV3"/>
+                            <constraint firstItem="MOG-lz-ATq" firstAttribute="bottom" secondItem="IiL-ZQ-uEn" secondAttribute="bottom" id="i7V-IB-feB"/>
+                            <constraint firstItem="MOG-lz-ATq" firstAttribute="trailing" secondItem="IiL-ZQ-uEn" secondAttribute="trailing" id="oXs-2l-LG0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Lk8-vp-coa"/>
+                    <connections>
+                        <outlet property="tableView" destination="MOG-lz-ATq" id="T8x-4B-MM0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oci-M9-t0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="943" y="-2"/>
+            <point key="canvasLocation" x="942.74809160305335" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>

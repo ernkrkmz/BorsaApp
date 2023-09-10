@@ -8,8 +8,11 @@
 import UIKit
 import SwiftSoup
 
-
 class ViewController: UIViewController {
+
+    @IBOutlet weak var btnHisseEkle: UIButton!
+    
+    var symbolList: Array<Substring> = []
 
     
     var myHtmlString = "boş myHtmlStr"
@@ -64,14 +67,41 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        getHtmlPage()
+        let cls = DataClass()
+        let asd = cls.getDatas(erenHandler: { str, err in
+            guard let str = str else {return "bos geldi"}
+            cls.parser(html: str) { data, error in
+                
+                print(type(of: data!))
+                
+                    self.symbolList.append(contentsOf: data!)
+                    
+            }
+
+            cls.parseWihtPrices(html: str) { arry, error in
+                
+            }
+            
+            return str
+        })
         
         
     }
 
-
+    @IBAction func hisseEkleClicked(_ sender: Any) {
+        performSegue(withIdentifier: "toAddVC", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAddVC"{
+            let destinationVC = segue.destination as! AddVierController
+            destinationVC.gelenSymbols = symbolList
+        }
+    }
+    
+    @IBAction func portfoyClicked(_ sender: Any) {
+        print(self.symbolList)
+    }
     
 }
 

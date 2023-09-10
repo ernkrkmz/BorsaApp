@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7018FE542AAAA0DD00C4F6EB /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C1FF852AAA6FA100C7BEBB /* DataClass.swift */; };
 		7044DA4F2AA6127900D2511A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7044DA4E2AA6127900D2511A /* AppDelegate.swift */; };
 		7044DA512AA6127900D2511A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7044DA502AA6127900D2511A /* SceneDelegate.swift */; };
 		7044DA532AA6127900D2511A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7044DA522AA6127900D2511A /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70099E832AADD72500E11C8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		7044DA4B2AA6127900D2511A /* BorsaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BorsaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7044DA4E2AA6127900D2511A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7044DA502AA6127900D2511A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +31,7 @@
 		7044DA5D2AA6127A00D2511A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7044DA5F2AA6127A00D2511A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70C1FF832AAA6C0100C7BEBB /* AddVierController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVierController.swift; sourceTree = "<group>"; };
+		70C1FF852AAA6FA100C7BEBB /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; wrapsLines = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,7 @@
 				7044DA5F2AA6127A00D2511A /* Info.plist */,
 				7044DA572AA6127900D2511A /* BorsaApp.xcdatamodeld */,
 				70C1FF832AAA6C0100C7BEBB /* AddVierController.swift */,
+				70C1FF852AAA6FA100C7BEBB /* DataClass.swift */,
 			);
 			path = BorsaApp;
 			sourceTree = "<group>";
@@ -152,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7018FE542AAAA0DD00C4F6EB /* DataClass.swift in Sources */,
 				7044DA532AA6127900D2511A /* ViewController.swift in Sources */,
 				7044DA592AA6127900D2511A /* BorsaApp.xcdatamodeld in Sources */,
 				7044DA4F2AA6127900D2511A /* AppDelegate.swift in Sources */,
@@ -167,6 +172,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7044DA552AA6127900D2511A /* Base */,
+				70099E832AADD72500E11C8B /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

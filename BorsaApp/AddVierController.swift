@@ -7,55 +7,39 @@
 
 import UIKit
 import SwiftSoup
-class AddVierController: UIViewController {
+class AddVierController: UIViewController ,UITableViewDataSource, UITableViewDelegate{
+    
+    var gelenSymbols: Array<Substring> = []
 
-    func getHtmlPage(){
-
-        let milliyet = URL(string: "https://uzmanpara.milliyet.com.tr/canli-borsa/bist-TUM-hisseleri/")!
-        let task = URLSession.shared.dataTask(with: milliyet) { [self] data, response, error in
-            guard let data = data else {
-                print("data was nil")
-                return
-            }
-            guard let htmlString = String(data: data, encoding: String.Encoding.utf8) else {
-                print("htmlString problem")
-                return
-            }
-            
-            
-            
-            parser(html: htmlString)
-        }
-        task.resume()
-        
-    }
-
-    func parser(html : String){
-        do{
-            let document : Document = try SwiftSoup.parse(html)
-            guard let body = document.body() else {return}
-            do{
-                let isimler = try body.getElementsByClass("currency").text()
-                let sirketler = isimler.split(separator: " ")
-                print(sirketler)
-            }
-            
-            
-        }catch{
-            
-        }
-        
-    }
+    @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         // Do any additional setup after loading the view.
         
-        getHtmlPage()
+        
+        
     }
     
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return gelenSymbols.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = String(gelenSymbols[indexPath.row])
+        
+        return cell
 
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(gelenSymbols[indexPath.row])
+    }
     
 
 }
