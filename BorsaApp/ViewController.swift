@@ -96,6 +96,7 @@ class ViewController: UIViewController {
         if segue.identifier == "toAddVC"{
             let destinationVC = segue.destination as! AddVierController
             destinationVC.gelenSymbols = symbolList
+            print(symbolList.count)
         }
     }
     
