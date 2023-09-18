@@ -33,7 +33,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Portföy"/>
                                 <connections>
-                                    <action selector="hisseEkleClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xqX-HN-qZl"/>
                                     <action selector="portfoyClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jfl-eE-NZo"/>
                                 </connections>
                             </button>

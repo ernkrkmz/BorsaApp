@@ -92,6 +92,7 @@ class ViewController: UIViewController {
     @IBAction func hisseEkleClicked(_ sender: Any) {
         performSegue(withIdentifier: "toAddVC", sender: nil)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAddVC"{
             let destinationVC = segue.destination as! AddVierController

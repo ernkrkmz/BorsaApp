@@ -71,7 +71,16 @@ class DataClass {
             let filtered = arr.filter { $0 != " " }
             
             let filtered2 = filtered.filter { $0 != "  " }
-            print(filtered2.count)
+            print(filtered2[0])
+            var index = 1
+            for str in filtered2{
+                if index >= filtered2.startIndex && index < filtered2.endIndex {
+                    fiyatlar.append(filtered2[index])
+                    index = index + 4
+                }
+            }
+            print(self.fiyatlar.count)
+            
             
 //            ------------------------------------
 
