@@ -11,6 +11,7 @@ class AddVierController: UIViewController ,UITableViewDataSource, UITableViewDel
     
     var gelenSymbols: Array<String> = []
     var gelenFiyatlar: Array<String> = []
+    var gelenDegisim: Array<String> = []
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -31,9 +32,19 @@ class AddVierController: UIViewController ,UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = (String(gelenSymbols[indexPath.row]) + "\t\t / \t\t" + String(gelenFiyatlar[indexPath.row]) )
-        
+//        let cell = UITableViewCell()
+//        cell.textLabel?.text = (String(gelenSymbols[indexPath.row]) + "\t\t / \t\t" + String(gelenFiyatlar[indexPath.row]) )
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cello") as! MyTableCell
+        cell.lblsym2.text = gelenSymbols[indexPath.row]
+        cell.lblFiyat.text = gelenFiyatlar[indexPath.row]
+        if gelenDegisim[indexPath.row].first == "-" {
+            cell.lblDegisim.text = gelenDegisim[indexPath.row]
+            cell.lblDegisim.textColor = UIColor.red
+        }
+        else{
+            cell.lblDegisim.text = gelenDegisim[indexPath.row]
+            cell.lblDegisim.textColor = UIColor.systemGreen
+        }
         return cell
 
     }

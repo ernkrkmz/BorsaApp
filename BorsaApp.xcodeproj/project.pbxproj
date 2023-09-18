@@ -17,6 +17,7 @@
 		7044DA5E2AA6127A00D2511A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7044DA5C2AA6127A00D2511A /* LaunchScreen.storyboard */; };
 		7044DA672AA612D100D2511A /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 7044DA662AA612D100D2511A /* SwiftSoup */; };
 		70C1FF842AAA6C0100C7BEBB /* AddVierController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C1FF832AAA6C0100C7BEBB /* AddVierController.swift */; };
+		70FC8BFB2AB8B50D00DCB2DC /* MyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FC8BFA2AB8B50D00DCB2DC /* MyTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		7044DA5F2AA6127A00D2511A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70C1FF832AAA6C0100C7BEBB /* AddVierController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVierController.swift; sourceTree = "<group>"; };
 		70C1FF852AAA6FA100C7BEBB /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		70FC8BFA2AB8B50D00DCB2DC /* MyTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				7044DA572AA6127900D2511A /* BorsaApp.xcdatamodeld */,
 				70C1FF832AAA6C0100C7BEBB /* AddVierController.swift */,
 				70C1FF852AAA6FA100C7BEBB /* DataClass.swift */,
+				70FC8BFA2AB8B50D00DCB2DC /* MyTableCell.swift */,
 			);
 			path = BorsaApp;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				7044DA4F2AA6127900D2511A /* AppDelegate.swift in Sources */,
 				7044DA512AA6127900D2511A /* SceneDelegate.swift in Sources */,
 				70C1FF842AAA6C0100C7BEBB /* AddVierController.swift in Sources */,
+				70FC8BFB2AB8B50D00DCB2DC /* MyTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

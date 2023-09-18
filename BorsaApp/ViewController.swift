@@ -131,6 +131,7 @@ class ViewController: UIViewController {
             let destinationVC = segue.destination as! AddVierController
             destinationVC.gelenSymbols = semboller
             destinationVC.gelenFiyatlar = fiyatlar
+            destinationVC.gelenDegisim = degisim
             
         }
     }
