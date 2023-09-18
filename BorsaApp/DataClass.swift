@@ -54,7 +54,11 @@ class DataClass {
     }
     var liste1: Array<String> = []
     var table_name: Array<String> = []
+    
+    var semboller: Array<String> = []
     var fiyatlar: Array<String> = []
+    var degisim: Array<String> = []
+    var tarih: Array<String> = []
 
     
     func parseWihtPrices(html : String , completionHandler: @escaping (Array<Substring>? , Error?) -> Void){
@@ -72,14 +76,28 @@ class DataClass {
             
             let filtered2 = filtered.filter { $0 != "  " }
             print(filtered2[0])
-            var index = 1
-            for str in filtered2{
+            var index = 0
+            for _ in filtered2{
                 if index >= filtered2.startIndex && index < filtered2.endIndex {
+                    semboller.append(filtered2[index])
+                    index = index + 1
                     fiyatlar.append(filtered2[index])
-                    index = index + 4
+                    index = index + 1
+                    degisim.append(filtered2[index])
+                    index = index + 1
+                    tarih.append(filtered2[index])
+                    index = index + 1
+
                 }
             }
-            print(self.fiyatlar.count)
+            func getfiyat(){
+                
+            }
+            print("semboller :" + String(self.semboller.count))
+            print("fiyatlar :" + String(self.fiyatlar.count))
+            print("degisim :" + String(self.degisim.count))
+            print("tarih :" + String(self.tarih.count))
+//            print(self.fiyatlar.count)
             
             
 //            ------------------------------------

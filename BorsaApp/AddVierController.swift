@@ -9,8 +9,8 @@ import UIKit
 import SwiftSoup
 class AddVierController: UIViewController ,UITableViewDataSource, UITableViewDelegate{
     
-    var gelenSymbols: Array<Substring> = []
-
+    var gelenSymbols: Array<String> = []
+    var gelenFiyatlar: Array<String> = []
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -32,7 +32,7 @@ class AddVierController: UIViewController ,UITableViewDataSource, UITableViewDel
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = String(gelenSymbols[indexPath.row])
+        cell.textLabel?.text = (String(gelenSymbols[indexPath.row]) + "\t\t / \t\t" + String(gelenFiyatlar[indexPath.row]) )
         
         return cell
 
