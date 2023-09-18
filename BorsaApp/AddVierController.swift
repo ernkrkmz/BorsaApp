@@ -49,7 +49,8 @@ class AddVierController: UIViewController ,UITableViewDataSource, UITableViewDel
 
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(gelenSymbols[indexPath.row])
+        print(gelenSymbols[indexPath.row] + " " + gelenFiyatlar[indexPath.row])
+        
     }
     
 
