@@ -12,6 +12,9 @@ class AddVierController: UIViewController ,UITableViewDataSource, UITableViewDel
     var gelenSymbols: Array<String> = []
     var gelenFiyatlar: Array<String> = []
     var gelenDegisim: Array<String> = []
+    
+    var selectedSembol = " "
+    var selectedFiyat = " "
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -51,7 +54,20 @@ class AddVierController: UIViewController ,UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(gelenSymbols[indexPath.row] + " " + gelenFiyatlar[indexPath.row])
         
+        selectedSembol = gelenSymbols[indexPath.row]
+        selectedFiyat = gelenFiyatlar[indexPath.row]
+        
+        performSegue(withIdentifier: "toHisseEklemeVC", sender: nil)
+
+        
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toHisseEklemeVC"{
+            let destinationVC = segue.destination as! HisseEklemeVC
+            destinationVC.degisken1 = selectedSembol
+            destinationVC.degisken2 = selectedFiyat
+            
+        }
+    }
 
 }

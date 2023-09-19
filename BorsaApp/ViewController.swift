@@ -7,10 +7,13 @@
 
 import UIKit
 import SwiftSoup
+import Firebase
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var btnHisseEkle: UIButton!
+    
+    @IBOutlet weak var lblUser: UILabel!
     
     var symbolList: Array<Substring> = []
     var liste1: Array<String> = []
@@ -65,7 +68,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        lblUser.text = Auth.auth().currentUser?.email
         let cls = DataClass()
         let asd = cls.getDatas(erenHandler: { str, err in
             guard let str = str else {return "bos geldi"}
