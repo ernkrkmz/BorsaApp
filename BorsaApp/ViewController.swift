@@ -26,45 +26,7 @@ class ViewController: UIViewController {
     var myHtmlString = "boş myHtmlStr"
     var array_name = [String]()
     
-    func getHtmlPage(){
-
-        let milliyet = URL(string: "https://uzmanpara.milliyet.com.tr/canli-borsa/bist-TUM-hisseleri/")!
-        let task = URLSession.shared.dataTask(with: milliyet) { [self] data, response, error in
-            guard let data = data else {
-                print("data was nil")
-                return
-            }
-            guard let htmlString = String(data: data, encoding: String.Encoding.utf8) else {
-                print("htmlString problem")
-                return
-            }
-            
-            DispatchQueue.main.async{
-                self.myHtmlString = htmlString
-            }
-            
-            parser(html: htmlString)
-        }
-        task.resume()
-        
-    }
-
-    func parser(html : String){
-        do{
-            let document : Document = try SwiftSoup.parse(html)
-            guard let body = document.body() else {return}
-            do{
-                let isimler = try body.getElementsByClass("currency").text()
-                let sirketler = isimler.split(separator: " ")
-                print(sirketler)
-            }
-            
-            
-        }catch{
-            
-        }
-        
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,10 +71,7 @@ class ViewController: UIViewController {
                 print("fiyatlar :" + String(self.fiyatlar.count))
                 print("degisim :" + String(self.degisim.count))
                 print("tarih :" + String(self.tarih.count))
-    //            print(self.fiyatlar.count)
-                
-                
-    //            ------------------------------------
+   
 
             }catch{
                 

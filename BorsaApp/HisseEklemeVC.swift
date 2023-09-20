@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 class HisseEklemeVC: UIViewController {
 
     @IBOutlet weak var txtHisseKodu: UITextField!
@@ -22,7 +22,6 @@ class HisseEklemeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnKaydet.isEnabled = false
         
         txtHisseKodu.text       = degisken1
         txtHisseMaliyet.text    = degisken2
@@ -31,8 +30,32 @@ class HisseEklemeVC: UIViewController {
     }
     
 
-    @IBAction func btnKaydetClicked(_ sender: Any) {
+    func hataMesajiGoster(title : String , message : String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okBtn = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okBtn)
+        self.present(alert, animated: true , completion: nil)
+        
     }
     
+    @IBAction func btnKaydetClicked(_ sender: Any) {
+        if txtHisseAdet.text != "" && txtHisseMaliyet.text != "" {
+        let firestore = Firestore.firestore()
+        let firestorePost = [ "email" : Auth.auth().currentUser!.email ?? "hata" , "hisse" : degisken1 , "adet" : Int(txtHisseAdet.text!) ?? 0 , "maliyet" : Int(txtHisseMaliyet.text!) ?? 0] as [String : Any]
+        
+        firestore.collection("portfoy").addDocument(data: firestorePost) { error in
+            if error != nil {
+                self.hataMesajiGoster(title: "Hata", message: error?.localizedDescription ?? "kayit yapilamadi")
+            }
+            else{
+                self.dismiss(animated: true)
+            }
+        }
+        
+        }
+        else {
+            hataMesajiGoster(title: "Eksik veri", message: "Tüm alanları doldurun")
+        }
+    }
 
 }
