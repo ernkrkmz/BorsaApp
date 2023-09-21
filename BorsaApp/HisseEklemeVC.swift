@@ -24,7 +24,7 @@ class HisseEklemeVC: UIViewController {
         super.viewDidLoad()
         
         txtHisseKodu.text       = degisken1
-        txtHisseMaliyet.text    = degisken2
+        txtHisseMaliyet.text    = degisken2.replacingOccurrences(of: ",", with: ".")
         txtHisseKodu.isEnabled = false
         // Do any additional setup after loading the view.
     }
@@ -41,7 +41,7 @@ class HisseEklemeVC: UIViewController {
     @IBAction func btnKaydetClicked(_ sender: Any) {
         if txtHisseAdet.text != "" && txtHisseMaliyet.text != "" {
         let firestore = Firestore.firestore()
-        let firestorePost = [ "email" : Auth.auth().currentUser!.email ?? "hata" , "hisse" : degisken1 , "adet" : Int(txtHisseAdet.text!) ?? 0 , "maliyet" : Int(txtHisseMaliyet.text!) ?? 0] as [String : Any]
+            let firestorePost = [ "email" : Auth.auth().currentUser!.email ?? "hata" , "hisse" : degisken1 , "adet" : txtHisseAdet.text! , "maliyet" : txtHisseMaliyet.text! ] as [String : Any]
         
         firestore.collection("portfoy").addDocument(data: firestorePost) { error in
             if error != nil {

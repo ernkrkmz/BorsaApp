@@ -18,21 +18,50 @@ class ViewController: UIViewController {
     var symbolList: Array<Substring> = []
     var liste1: Array<String> = []
 
-    var semboller: Array<String> = []
-    var fiyatlar: Array<String> = []
-    var degisim: Array<String> = []
-    var tarih: Array<String> = []
+    var semboller   : Array<String> = []
+    var fiyatlar    : Array<String> = []
+    var degisim     : Array<String> = []
+    var tarih       : Array<String> = []
+    
+    var portfoyHisse    : Array<String> = []
+    var portfoyAdet     : Array<String> = []
+    var portfoyMaliyet  : Array<String> = []
     
     var myHtmlString = "boş myHtmlStr"
     var array_name = [String]()
     
-    
-    
+    func firebasePortfoyuAl() {
+        let firestoreDB = Firestore.firestore()
+        firestoreDB.collection("portfoy").whereField("email", isEqualTo:lblUser.text!).addSnapshotListener { snapshot, error in
+            if error != nil {
+                print(error?.localizedDescription ?? "Hata mesaji")
+            }
+            else{
+                if snapshot?.isEmpty != true && snapshot != nil {
+                
+                    for document in snapshot!.documents {
+                        
+                        if let hisse = document.get("hisse") as? String{
+                            if let maliyet = document.get("maliyet") as? String{
+                                if let adet = document.get("adet") as? String{
+                                    self.portfoyHisse.append(hisse)
+                                    self.portfoyMaliyet.append(maliyet)
+                                    self.portfoyAdet.append(adet)
+                                }
+                            }
+                        }
+                        
+                    }
+                
+                }
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         lblUser.text = Auth.auth().currentUser?.email
         let cls = DataClass()
-        let asd = cls.getDatas(erenHandler: { str, err in
+        _ = cls.getDatas(erenHandler: { str, err in
             guard let str = str else {return "bos geldi"}
             cls.parser(html: str) { data, error in
                                 
@@ -43,7 +72,7 @@ class ViewController: UIViewController {
                 let document : Document = try SwiftSoup.parse(str)
                 guard let body = document.body() else { return ""}
                 let zebras = try body.getElementsByClass("zebra").text()
-                var firsthSplit = zebras.split(separator: " ")
+                let firsthSplit = zebras.split(separator: " ")
 
                 firsthSplit.map{
                     self.liste1.append(String($0))
@@ -82,6 +111,9 @@ class ViewController: UIViewController {
         })
         
         
+
+        
+        
     }
 
     @IBAction func hisseEkleClicked(_ sender: Any) {
@@ -99,7 +131,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func portfoyClicked(_ sender: Any) {
-        print(self.symbolList)
+        self.firebasePortfoyuAl()
     }
     
 }

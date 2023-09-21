@@ -110,6 +110,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Portföy"/>
                                 <connections>
                                     <action selector="portfoyClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jfl-eE-NZo"/>
+                                    <segue destination="c1o-re-rSm" kind="show" identifier="toPortfoyVC" id="Mrh-Cv-i0a"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rra-Zh-XcV">
@@ -142,6 +143,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="57.251908396946561" y="-2.1126760563380285"/>
+        </scene>
+        <!--Portfoy View Controller-->
+        <scene sceneID="GJg-Co-szG">
+            <objects>
+                <viewController id="c1o-re-rSm" customClass="PortfoyViewController" customModule="BorsaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1d7-L9-3xK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RDk-1N-1ma">
+                                <rect key="frame" x="0.0" y="15" width="393" height="827"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KM8-Lo-W3e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RDk-1N-1ma" firstAttribute="leading" secondItem="KM8-Lo-W3e" secondAttribute="leading" id="1vB-3Z-IMM"/>
+                            <constraint firstItem="RDk-1N-1ma" firstAttribute="bottom" secondItem="KM8-Lo-W3e" secondAttribute="bottom" id="FiA-4s-d7q"/>
+                            <constraint firstItem="RDk-1N-1ma" firstAttribute="top" secondItem="KM8-Lo-W3e" secondAttribute="top" constant="15" id="pB8-Ai-DKY"/>
+                            <constraint firstItem="RDk-1N-1ma" firstAttribute="trailing" secondItem="KM8-Lo-W3e" secondAttribute="trailing" id="x3c-9L-2mg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YoJ-g5-587"/>
+                    <connections>
+                        <outlet property="tableView" destination="RDk-1N-1ma" id="QSt-2d-fWe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TDg-lY-iwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="943" y="730"/>
         </scene>
         <!--Add Vier Controller-->
         <scene sceneID="Wgh-pI-BNM">
