@@ -59,7 +59,9 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         lblUser.text = Auth.auth().currentUser?.email
+        
         let cls = DataClass()
         _ = cls.getDatas(erenHandler: { str, err in
             guard let str = str else {return "bos geldi"}
@@ -111,6 +113,7 @@ class ViewController: UIViewController {
         })
         
         
+        self.firebasePortfoyuAl()
 
         
         
@@ -128,10 +131,21 @@ class ViewController: UIViewController {
             destinationVC.gelenDegisim = degisim
             
         }
+        if segue.identifier == "toPortfoyVC"{
+            let destinationVC = segue.destination as! PortfoyViewController
+            destinationVC.portfoyHisse      = portfoyHisse
+            destinationVC.portfoyAdet       = portfoyAdet
+            destinationVC.portfoyMaliyet    = portfoyMaliyet
+            
+            destinationVC.tumHisseler       = semboller
+            destinationVC.tumFiyatlar       = fiyatlar
+        }
     }
     
     @IBAction func portfoyClicked(_ sender: Any) {
-        self.firebasePortfoyuAl()
+
+        performSegue(withIdentifier: "toPortfoyVC", sender: nil)
+
     }
     
 }

@@ -17,6 +17,7 @@
 		7044DA5B2AA6127A00D2511A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7044DA5A2AA6127A00D2511A /* Assets.xcassets */; };
 		7044DA5E2AA6127A00D2511A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7044DA5C2AA6127A00D2511A /* LaunchScreen.storyboard */; };
 		7044DA672AA612D100D2511A /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 7044DA662AA612D100D2511A /* SwiftSoup */; };
+		704A736C2ABCB8EB000E51E8 /* PortfoyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A736B2ABCB8EB000E51E8 /* PortfoyTableViewCell.swift */; };
 		70C1FF842AAA6C0100C7BEBB /* AddVierController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C1FF832AAA6C0100C7BEBB /* AddVierController.swift */; };
 		70E5551D2AB9A45D0060932E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5551C2AB9A45D0060932E /* LoginVC.swift */; };
 		70E5551F2AB9AF890060932E /* HisseEklemeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5551E2AB9AF890060932E /* HisseEklemeVC.swift */; };
@@ -40,6 +41,7 @@
 		7044DA5A2AA6127A00D2511A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7044DA5D2AA6127A00D2511A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7044DA5F2AA6127A00D2511A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		704A736B2ABCB8EB000E51E8 /* PortfoyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfoyTableViewCell.swift; sourceTree = "<group>"; };
 		70C1FF832AAA6C0100C7BEBB /* AddVierController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVierController.swift; sourceTree = "<group>"; };
 		70C1FF852AAA6FA100C7BEBB /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		70E5551C2AB9A45D0060932E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				70C1FF852AAA6FA100C7BEBB /* DataClass.swift */,
 				70FC8BFC2AB8FC3C00DCB2DC /* GoogleService-Info.plist */,
 				70FC8BFA2AB8B50D00DCB2DC /* MyTableCell.swift */,
+				704A736B2ABCB8EB000E51E8 /* PortfoyTableViewCell.swift */,
 			);
 			path = BorsaApp;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				70E5551F2AB9AF890060932E /* HisseEklemeVC.swift in Sources */,
 				7044DA592AA6127900D2511A /* BorsaApp.xcdatamodeld in Sources */,
 				7044DA4F2AA6127900D2511A /* AppDelegate.swift in Sources */,
+				704A736C2ABCB8EB000E51E8 /* PortfoyTableViewCell.swift in Sources */,
 				7044DA512AA6127900D2511A /* SceneDelegate.swift in Sources */,
 				70C1FF842AAA6C0100C7BEBB /* AddVierController.swift in Sources */,
 				70FC8BFB2AB8B50D00DCB2DC /* MyTableCell.swift in Sources */,
