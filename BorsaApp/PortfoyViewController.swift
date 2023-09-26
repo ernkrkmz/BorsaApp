@@ -47,14 +47,6 @@ class PortfoyViewController: UIViewController ,UITableViewDataSource, UITableVie
         print(portfoyHisse)
 
 
-//        dict = [tumHisseler : tumFiyatlar]
-        var duplicates = tumHisseler.removingDuplicates()
-//        let answer = zip(tumHisseler, duplicates).map {$0.0 == $0.1}
-
-//        let fullStack = Dictionary(uniqueKeysWithValues: zip(tumHisseler, tumFiyatlar))
-
-        
-
         for hisse in portfoyHisse{
             self.hisseIndexler.append(tumHisseler.firstIndex(of: hisse) ?? 111)
         }
@@ -70,6 +62,7 @@ class PortfoyViewController: UIViewController ,UITableViewDataSource, UITableVie
 //        }
         lblToplam.text = "Toplam : \(toplam)"
 
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,6 +70,7 @@ class PortfoyViewController: UIViewController ,UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "portfoyCell") as! PortfoyTableViewCell
         cell.lblHisse.text = portfoyHisse[indexPath.row]
         cell.lblAdet.text = portfoyAdet[indexPath.row]
@@ -88,6 +82,8 @@ class PortfoyViewController: UIViewController ,UITableViewDataSource, UITableVie
             self.hisseFiyatlar.append(tumFiyatlar[i])
         }
         cell.lblMaliyet.text = hisseFiyatlar[indexPath.row]
+        cell.lblGuncelTutar.text = "Guncel Tutar"
+        
 
 //        cell.lblGuncelFiyat.text = portfoyMaliyet[indexPath.row]
         
