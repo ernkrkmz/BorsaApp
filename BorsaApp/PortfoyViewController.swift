@@ -87,7 +87,6 @@ class PortfoyViewController: UIViewController ,UITableViewDataSource, UITableVie
 
 //        cell.lblGuncelFiyat.text = portfoyMaliyet[indexPath.row]
         
-
         return cell
     }
     
