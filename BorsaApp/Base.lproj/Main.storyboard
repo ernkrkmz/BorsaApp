@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E posta" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S3k-oM-On9">
-                                <rect key="frame" x="61" y="145" width="271" height="34"/>
+                                <rect key="frame" x="61" y="86" width="271" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -36,13 +36,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hesabın yok mu?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdF-8q-dQa">
-                                <rect key="frame" x="107" y="724" width="177" height="21"/>
+                                <rect key="frame" x="107" y="758" width="177" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFN-ye-26D">
-                                <rect key="frame" x="107" y="753" width="177" height="35"/>
+                                <rect key="frame" x="107" y="787" width="177" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Kayıt ol"/>
                                 <connections>
@@ -120,6 +120,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ug-tN-Pyy">
+                                <rect key="frame" x="159" y="765" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Çıkış"/>
+                                <connections>
+                                    <action selector="btnCikisClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XLr-yw-sz7"/>
+                                    <segue destination="8x7-gR-vlp" kind="presentation" identifier="toLoginVC" modalPresentationStyle="fullScreen" id="hVJ-in-xyD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
@@ -129,8 +138,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wyh-nJ-63F" secondAttribute="trailing" constant="84" id="CcT-Vi-JJp"/>
                             <constraint firstItem="Rra-Zh-XcV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="aG7-4A-eKV"/>
                             <constraint firstItem="5an-jt-Nsz" firstAttribute="top" secondItem="wyh-nJ-63F" secondAttribute="bottom" constant="30" id="dQR-5Z-ee8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6ug-tN-Pyy" secondAttribute="bottom" constant="52" id="iOW-6M-QVg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5an-jt-Nsz" secondAttribute="trailing" constant="84" id="jia-tE-Rpa"/>
                             <constraint firstItem="Rra-Zh-XcV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lBY-dT-1fv"/>
+                            <constraint firstItem="6ug-tN-Pyy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="159" id="q8x-sT-hkS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6ug-tN-Pyy" secondAttribute="trailing" constant="159" id="tXx-B7-2k2"/>
                             <constraint firstItem="Rra-Zh-XcV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x4V-N3-ZRd"/>
                             <constraint firstItem="5an-jt-Nsz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="84" id="yqB-Ek-lkO"/>
                         </constraints>

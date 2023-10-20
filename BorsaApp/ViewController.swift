@@ -148,6 +148,14 @@ class ViewController: UIViewController {
 
     }
     
+    @IBAction func btnCikisClicked(_ sender: Any) {
+        do{
+           try Auth.auth().signOut()
+        }catch{
+            
+        }
+        performSegue(withIdentifier: "toLoginVC", sender: nil)
+    }
     
     
 }
